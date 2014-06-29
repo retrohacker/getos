@@ -37,7 +37,6 @@ function getReleaseFile(names,cb) {
     fs.stat(names[index],function(e,stat) {
       if(e || !stat.isFile()) {
         index++
-        console.log(names[index]+" not found!")
         return checkExists()
       }
       if(names.length <= index) return cb(new Error("No file unique file found!"))
