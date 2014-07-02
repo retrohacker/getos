@@ -35,11 +35,11 @@ function getReleaseFile(names,cb) {
   var index = 0
   return function checkExists() {
     fs.stat(names[index],function(e,stat) {
+      if(names.length <= index) return cb(new Error("No file unique file found!"))
       if(e || !stat.isFile()) {
         index++
         return checkExists()
       }
-      if(names.length <= index) return cb(new Error("No file unique file found!"))
       cb(null,names[index])
     })
   }
