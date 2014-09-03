@@ -1,46 +1,113 @@
+/**
+ * Things we will need
+ */
+var distros = require('./os.json')
 var fs = require('fs')
 var os = require('os')
-var distros = require('./os.json')
-var cachedDistro = null
 
+/**
+ * Begin definition of globals.
+ */
+var cachedDistro = null // Store result of getLinuxDistro() after first call
+
+/**
+ * Module definition.
+ */
 module.exports = function getOs(cb) {
-  if(os.platform() == "linux") {
-    return getLinuxDistro(cb)
-  }
-  return cb(null, os.platform())
+  // Node builtin as first line of defense.
+  var osName = os.platform()
+  // Linux is a special case.
+  if(osName === "linux") return getLinuxDistro(cb)
+  // Else, node's builtin is acceptable.
+  return cb(null, osName)
 }
 
+/**
+ * Identify the actual distribution name on a linux box.
+ */
 function getLinuxDistro(cb) {
+  /**
+   * First, we check to see if this function has been called before.
+   * Since an OS doesn't change during runtime, its safe to cache
+   * the result and return it for future calls.
+   */
   if(cachedDistro) return cb(null,cachedDistro)
+
+  /**
+   * We are going to take our list of release files from os.json and
+   * check to see which one exists. It is safe to assume that no more
+   * than 1 file in the list from os.json will exist on a distribution.
+   */
   getReleaseFile(Object.keys(distros),function(e,file) {
+    /**
+     * Multiple distributions may share the same release file.
+     * We get our array of candidates and match the format of the release
+     * files and match them to a potential distribution
+     */
     var candidates = distros[file]
     fs.readFile(file,'utf-8',function(e,file) {
-      file = file.toLowerCase()
+      /**
+       * If we only know of one distribution that has this file, its
+       * somewhat safe to assume that it is the distribution we are
+       * running on.
+       */
       if(candidates.length===1) {
-        cachedDistro = candidates[0]
+        cachedDistro = candidates[0] // cache the result for later use
         return cb(null,candidates[0])
       }
+      /**
+       * First, set everything to lower case to keep inconsistent
+       * specifications from mucking up our logic.
+       */
+      file = file.toLowerCase()
+      /**
+       * Now we need to check all of our potential candidates one by one.
+       * If their name is in the release file, it is guarenteed to be the
+       * distribution we are running on. If distributions share the same
+       * release file, it is reasonably safe to assume they will have the
+       * distribution name stored in their release file.
+       */
       candidates.forEach(function(candidate) {
+        /**
+         * We only care about the first word. I.E. for Arch Linux it is safe
+         * to simply search for "arch". Also note, we force lower case to
+         * match file.toLowerCase() above.
+         */
         check = candidate.split(" ")[0].toLowerCase()
         if(file.indexOf(check)>=0) {
-          cachedDistro = candidate
+          cachedDistro = candidate // cache the result for later use
           return cb(null,candidate)
         }
       })
     })
-  })()
+  })() // sneaky sneaky.
 }
 
+/**
+ * getReleaseFile() checks an array of filenames and returns the first one it
+ * finds on the filesystem.
+ */
 function getReleaseFile(names,cb) {
-  var index = 0
+  var index = 0 //Lets keep track of which file we are on.
+  /**
+   * checkExists() is a first class function that we are using for recursion.
+   */
   return function checkExists() {
+    /**
+     * Lets get the file metadata off the current file.
+     */
     fs.stat(names[index],function(e,stat) {
+      /**
+       * Now we check if either the file didn't exist, or it is something
+       * other than a file for some very very bizzar reason.
+       */
       if(e || !stat.isFile()) {
-        index++
-        if(names.length <= index) return cb(new Error("No file unique file found!"))
-        return checkExists()
+        index++ // If it is not a file, we will check the next one!
+        if(names.length <= index) // Unless we are out of files.
+          return cb(new Error("No unique release file found!")) // Then error.
+        return checkExists() // Re-call this function to check the next file.
       }
-      cb(null,names[index])
+      cb(null,names[index]) // If we found a file, return it!
     })
   }
 }
