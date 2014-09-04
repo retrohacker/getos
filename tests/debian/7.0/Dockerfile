@@ -1,4 +1,4 @@
-FROM debian:7.0
+FROM debian:7
 MAINTAINER William Blankenship <william.jblankenship@gmail.com>
 
 # Setup NodeSource Official PPA
