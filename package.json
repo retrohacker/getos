@@ -4,7 +4,7 @@
   "description": "Get the OS/Distribution name of the environment you are working on",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/runTest.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/wblankenship/getos/issues"
   },
-  "homepage": "https://github.com/wblankenship/getos"
+  "homepage": "https://github.com/wblankenship/getos",
+  "devDependencies": {
+    "cli-color": "^0.3.2",
+    "execSync": "^1.0.2",
+    "sleep": "^1.1.8"
+  }
 }
