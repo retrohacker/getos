@@ -14,8 +14,18 @@ var getos = require('getos')
 
 getos(function(e,os) {
   if(e) return console.log(e)
-  console.log("Your OS is:" +os)
+  console.log("Your OS is:" +JSON.stringify(os))
 })
+```
+
+The `os` object conforms to:
+
+```js
+{
+  "dist":[DIST NAME]
+  "codename":[CODENAME]
+  "release":[VERSION]
+}
 ```
 
 # Disclaimer
