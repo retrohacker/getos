@@ -52,8 +52,11 @@ function getLinuxDistro(cb) {
        * running on.
        */
       if(candidates.length===1) {
-        cachedDistro = candidates[0] // cache the result for later use
-        return cb(null,candidates[0])
+        var os = {"dist":candidates[0]}
+        customLogic(os,file,function(e,os) {
+          cachedDistro = os
+          return cb(null,os)
+        })
       }
       /**
        * First, set everything to lower case to keep inconsistent
@@ -75,12 +78,24 @@ function getLinuxDistro(cb) {
          */
         check = candidate.split(" ")[0].toLowerCase()
         if(file.indexOf(check)>=0) {
-          cachedDistro = candidate // cache the result for later use
-          return cb(null,candidate)
+          var os = {"dist":candidate}
+          customLogic(os,file,function(e,os) {
+            cachedDistro = os
+            return cb(null,os)
+          })
         }
       })
     })
   })() // sneaky sneaky.
+}
+
+/**
+ * Loads a custom logic module to populate additional distribution information
+ */
+function customLogic(os,file,cb) {
+  console.log(file)
+  try{require("./logic/"+os.dist.split(" ")[0].toLowerCase()+".js")(os,file,cb)}
+  catch(e) {console.log(e);cb(null,os)}
 }
 
 /**
