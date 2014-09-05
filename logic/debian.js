@@ -10,7 +10,7 @@ module.exports = function(os,file,cb) {
 
 function lsbrelease(os,file,cb) {
   exec("lsb_release -a",function(e,stdout,stderr) {
-    if(e) return file(os,file,cb)
+    if(e) return releasefile(os,file,cb)
     var release = stdout.match(lsbRelease)
     if(release && release.length === 2) os.release = release[1]
     var codename = stdout.match(lsbCodename)
@@ -19,8 +19,8 @@ function lsbrelease(os,file,cb) {
   })
 }
 
-function file(os,file,cb) {
-  var release = stdout.match(releaseRegex)
+function releasefile(os,file,cb) {
+  var release = file.match(releaseRegex)
   if(release && release.length === 2) os.release = release[1]
   cb(null,os)
 }
