@@ -95,7 +95,7 @@ function getLinuxDistro(cb) {
 function customLogic(os,file,cb) {
   console.log(file)
   try{require("./logic/"+os.dist.split(" ")[0].toLowerCase()+".js")(os,file,cb)}
-  catch(e) {console.log(e);cb(null,os)}
+  catch(e) {cb(null,os)}
 }
 
 /**
