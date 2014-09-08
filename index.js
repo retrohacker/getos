@@ -19,7 +19,7 @@ module.exports = function getOs(cb) {
   // Linux is a special case.
   if(osName === "linux") return getLinuxDistro(cb)
   // Else, node's builtin is acceptable.
-  return cb(null,{"dist":osName})
+  return cb(null,{"os":osName})
 }
 
 /**
@@ -52,7 +52,7 @@ function getLinuxDistro(cb) {
        * running on.
        */
       if(candidates.length===1) {
-        var os = {"dist":candidates[0]}
+        var os = {"os":"linux","dist":candidates[0]}
         return customLogic(os,file,function(e,os) {
           cachedDistro = os
           return cb(null,os)
@@ -78,7 +78,7 @@ function getLinuxDistro(cb) {
          */
         check = candidate.split(" ")[0].toLowerCase()
         if(file.indexOf(check)>=0) {
-          var os = {"dist":candidate}
+          var os = {"os":"linux","dist":candidate}
           return customLogic(os,file,function(e,os) {
             cachedDistro = os
             return cb(null,os)
