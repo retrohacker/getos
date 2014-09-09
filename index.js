@@ -1,9 +1,11 @@
 /**
  * Things we will need
  */
+var async = require('async')
 var distros = require('./os.json')
 var fs = require('fs')
 var os = require('os')
+var once = require('once')
 
 /**
  * Begin definition of globals.
@@ -26,6 +28,8 @@ module.exports = function getOs(cb) {
  * Identify the actual distribution name on a linux box.
  */
 function getLinuxDistro(cb) {
+  cb = once(cb) // only allow cb to be called once.
+
   /**
    * First, we check to see if this function has been called before.
    * Since an OS doesn't change during runtime, its safe to cache
@@ -44,7 +48,9 @@ function getLinuxDistro(cb) {
      * We get our array of candidates and match the format of the release
      * files and match them to a potential distribution
      */
-    var candidates = distros[file]
+    var candidates = distros[file],
+      os = {"os":"linux","dist":candidates[0]}
+
     fs.readFile(file,'utf-8',function(e,file) {
       /**
        * If we only know of one distribution that has this file, its
@@ -52,7 +58,6 @@ function getLinuxDistro(cb) {
        * running on.
        */
       if(candidates.length===1) {
-        var os = {"os":"linux","dist":candidates[0]}
         return customLogic(os,file,function(e,os) {
           cachedDistro = os
           return cb(null,os)
@@ -70,7 +75,7 @@ function getLinuxDistro(cb) {
        * release file, it is reasonably safe to assume they will have the
        * distribution name stored in their release file.
        */
-      candidates.forEach(function(candidate) {
+      async.each(candidates, function(candidate, cb) {
         /**
          * We only care about the first word. I.E. for Arch Linux it is safe
          * to simply search for "arch". Also note, we force lower case to
@@ -78,13 +83,17 @@ function getLinuxDistro(cb) {
          */
         check = candidate.split(" ")[0].toLowerCase()
         if(file.indexOf(check)>=0) {
-          var os = {"os":"linux","dist":candidate}
+          os.dist = candidate
           return customLogic(os,file,function(e,os) {
             cachedDistro = os
             return cb(null,os)
           })
         }
-      })
+      }, function() {
+        cachedDistro = os
+        return cb(null,os)
+      });
+
     })
   })() // sneaky sneaky.
 }
