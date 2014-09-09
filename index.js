@@ -75,7 +75,7 @@ function getLinuxDistro(cb) {
        * release file, it is reasonably safe to assume they will have the
        * distribution name stored in their release file.
        */
-      async.each(candidates, function(candidate, cb) {
+      async.each(candidates, function(candidate, done) {
         /**
          * We only care about the first word. I.E. for Arch Linux it is safe
          * to simply search for "arch". Also note, we force lower case to
@@ -86,8 +86,11 @@ function getLinuxDistro(cb) {
           os.dist = candidate
           return customLogic(os,file,function(e,os) {
             cachedDistro = os
-            return cb(null,os)
+            cb(null,os)
+            return done();
           })
+        } else {
+          return done();
         }
       }, function() {
         cachedDistro = os
