@@ -1,4 +1,4 @@
-var releaseRegex = /release (..)/
+var releaseRegex = /release ([^ ]+)/
 var codenameRegex = /\((.*)\)/
 
 module.exports = function fedoraCustomLogic(os,file,cb) {
