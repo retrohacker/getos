@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wblankenship/getos.git"
+    "url": "https://github.com/wblankenship/getos.git"
   },
   "keywords": [
     "OS",
@@ -29,5 +29,12 @@
   "dependencies": {
     "async": "^0.9.0",
     "once": "^1.3.0"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Benjamin E. Coe",
+      "email": "bencoe@gmail.com",
+      "url": "https://github.com/bcoe",
+    }
+  ]
 }
