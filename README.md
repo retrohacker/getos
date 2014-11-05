@@ -1,14 +1,18 @@
+GETOS
+---
 
-===
-A simple npm utility to supplement `os.platform()
+A simple npm utility to supplement `os.platform()`
+
 # Problem
-`os.platform()` returns `linux`. If you want the distrubtion name, you are S.O.L
+`os.platform()` returns `linux`. If you want the distrubtion name, you are S.O.L.
+
 # Solution
 This. Simply call
 
 ```js
+var getos = require('getos')
 
-
+getos(function(e,os) {
   if(e) return console.log(e)
   console.log("Your OS is:" +JSON.stringify(os))
 })
