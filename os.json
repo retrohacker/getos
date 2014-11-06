@@ -5,10 +5,7 @@
   "/etc/aurox-release" : ["Aurox Linux"],
   "/etc/blackcat-release" : ["BlackCat"],
   "/etc/cobalt-release" : ["Cobalt"],
-  "/etc/lsb-release" : ["Chakra","IYCC","Linux Mint","Ubuntu Linux"],
   "/etc/conectiva-release" : ["Conectiva"],
-  "/etc/debian_version" : ["Debian"],
-  "/etc/debian_release" : ["Debian"],
   "/etc/fedora-release" : ["Fedora"],
   "/etc/eos-version" : ["FreeEOS"],
   "/etc/gentoo-release" : ["Gentoo Linux"],
@@ -46,5 +43,8 @@
   "/etc/ultrapenguin-release" : ["UltraPenguin"],
   "/etc/UnitedLinux-release" : ["UnitedLinux"],
   "/etc/va-release" : ["VA-Linux/RH-VALE"],
-  "/etc/yellowdog-release" : ["Yellow Dog"]
+  "/etc/yellowdog-release" : ["Yellow Dog"],
+  "/etc/lsb-release" : ["Chakra","IYCC","Linux Mint","Ubuntu Linux"],
+  "/etc/debian_version" : ["Debian"],
+  "/etc/debian_release" : ["Debian"]
 }
