@@ -1,4 +1,9 @@
 {
+  "/etc/redhat-release" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF","Centos"],
+  "/etc/redhat_version" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF"],
+  "/etc/lsb-release" : ["Chakra","IYCC","Linux Mint","Ubuntu Linux"],
+  "/etc/debian_version" : ["Debian"],
+  "/etc/debian_release" : ["Debian"],
   "/etc/annvix-release" : ["Annvix"],
   "/etc/arch-release" : ["Arch Linux"],
   "/etc/arklinux-release" : ["Arklinux"],
@@ -25,8 +30,6 @@
   "/etc/nld-release" : ["Novell Linux Desktop"],
   "/etc/pld-release" : ["PLD Linux"],
   "/etc/rubix-version" : ["Rubix"],
-  "/etc/redhat-release" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF","Centos"],
-  "/etc/redhat_version" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF"],
   "/etc/slackware-version" : ["Slackware"],
   "/etc/slackware-release" : ["Slackware"],
   "/etc/e-smith-release" : ["SME Server"],
@@ -43,8 +46,5 @@
   "/etc/ultrapenguin-release" : ["UltraPenguin"],
   "/etc/UnitedLinux-release" : ["UnitedLinux"],
   "/etc/va-release" : ["VA-Linux/RH-VALE"],
-  "/etc/yellowdog-release" : ["Yellow Dog"],
-  "/etc/lsb-release" : ["Chakra","IYCC","Linux Mint","Ubuntu Linux"],
-  "/etc/debian_version" : ["Debian"],
-  "/etc/debian_release" : ["Debian"]
+  "/etc/yellowdog-release" : ["Yellow Dog"]
 }
