@@ -27,8 +27,7 @@
     "sleep": "^1.1.8"
   },
   "dependencies": {
-    "async": "^0.9.0",
-    "once": "^1.3.0"
+    "async": "^0.9.0"
   },
   "contributors": [
     {

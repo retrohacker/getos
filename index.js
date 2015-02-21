@@ -5,7 +5,6 @@ var async = require('async')
 var distros = require('./os.json')
 var fs = require('fs')
 var os = require('os')
-var once = require('once')
 
 /**
  * Begin definition of globals.
@@ -28,8 +27,6 @@ module.exports = function getOs(cb) {
  * Identify the actual distribution name on a linux box.
  */
 function getLinuxDistro(cb) {
-  cb = once(cb) // only allow cb to be called once.
-
   /**
    * First, we check to see if this function has been called before.
    * Since an OS doesn't change during runtime, its safe to cache
@@ -84,9 +81,8 @@ function getLinuxDistro(cb) {
         check = candidate.split(" ")[0].toLowerCase()
         if(file.indexOf(check)>=0) {
           os.dist = candidate
-          return customLogic(os,file,function(e,os) {
-            cachedDistro = os
-            cb(null,os)
+          return customLogic(os,file,function(e, augmentedOs) {
+            os = augmentedOs;
             return done();
           })
         } else {
