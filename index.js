@@ -40,6 +40,8 @@ function getLinuxDistro(cb) {
    * than 1 file in the list from os.json will exist on a distribution.
    */
   getReleaseFile(Object.keys(distros),function(e,file) {
+    if(e) return cb(e)
+
     /**
      * Multiple distributions may share the same release file.
      * We get our array of candidates and match the format of the release
@@ -49,6 +51,8 @@ function getLinuxDistro(cb) {
       os = {"os":"linux","dist":candidates[0]}
 
     fs.readFile(file,'utf-8',function(e,file) {
+      if(e) return cb(e)
+
       /**
        * If we only know of one distribution that has this file, its
        * somewhat safe to assume that it is the distribution we are
@@ -56,6 +60,7 @@ function getLinuxDistro(cb) {
        */
       if(candidates.length===1) {
         return customLogic(os,file,function(e,os) {
+          if(e) return cb(e)
           cachedDistro = os
           return cb(null,os)
         })
@@ -82,13 +87,15 @@ function getLinuxDistro(cb) {
         if(file.indexOf(check)>=0) {
           os.dist = candidate
           return customLogic(os,file,function(e, augmentedOs) {
+            if(e) return done(e)
             os = augmentedOs;
             return done();
           })
         } else {
           return done();
         }
-      }, function() {
+      }, function(e) {
+        if(e) return cb(e)
         cachedDistro = os
         return cb(null,os)
       });
