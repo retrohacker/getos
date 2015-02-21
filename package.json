@@ -1,6 +1,6 @@
 {
   "name": "getos",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Get the OS/Distribution name of the environment you are working on",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,7 @@
     "sleep": "^1.1.8"
   },
   "dependencies": {
-    "async": "^0.9.0",
-    "once": "^1.3.0"
+    "async": "^0.9.0"
   },
   "contributors": [
     {
