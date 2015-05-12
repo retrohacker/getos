@@ -1,7 +1,7 @@
 var releaseRegex = /release ([^ ]+)/
 var codenameRegex = /\((.*)\)/
 
-module.exports = function fedoraCustomLogic(os,file,cb) {
+module.exports = function centosCustomLogic(os,file,cb) {
   var release = file.match(releaseRegex)
   if(release && release.length === 2) os.release = release[1]
   var codename = file.match(codenameRegex)
