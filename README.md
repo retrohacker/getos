@@ -38,7 +38,15 @@ Thanks for helping make this tool great.
 
 ## Tests
 
-The tests currently offer only visual confirmation of the output (since we don't really have a specification we conform to).
+We have two forms of tests, unit tests and integration tests.
+
+### Unit Tests
+
+Unit tests stub out the behaviour of the OS files and libraries we depend on to ensure the behaviour of the application is sound. You can run these simply by running `npm test`
+
+### Integration tests
+
+The integration tests sanity checks the assumptions we make about the format of the OS files and libraries we depend on against real world OS configurations. These tests currently offer only visual confirmation of the output.
 
 The tests are powered by docker, and must be run from the top level directory of the project. You can run them via
 
@@ -46,12 +54,12 @@ The tests are powered by docker, and must be run from the top level directory of
 node tests/runTest.js
 ```
 
-They are powered by docker, so you must have docker installed to run the tests. You will notice that the first time the tests run, they will probably take somewhere between 30 minutes and 4 hours to complete. They download a bakers dozen of gigs to build the docker images. Pretty network intensive stuff. Also, if you are a neckbeard and have your HDD partitioned to isolate _/var_ and _/tmp_ on small partions, the tests will probably crash. _/tmp_ will need ~4GB of free space for the tests to run. _/var_ will need ~20GB to store all the images.
+Since these are powered by docker, you must have docker installed to run the tests. You will notice that the first time the tests run, they will probably take somewhere between 30 minutes and 4 hours to complete. They download a bakers dozen of gigs to build the docker images. Pretty network intensive stuff. Also, if you are a neckbeard and have your HDD partitioned to isolate _/var_ and _/tmp_ on small partitions, the tests will probably crash. _/tmp_ will need ~4GB of free space for the tests to run. _/var_ will need ~20GB to store all the images.
 
 You can also run the tests via
 
 ```sh
-npm test
+npm run integration
 ```
 
 But the fantastic spinner packaged with npm mucks up stdout, so output will be garbled.
