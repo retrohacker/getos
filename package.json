@@ -4,7 +4,8 @@
   "description": "Get the OS/Distribution name of the environment you are working on",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/mocktests.js && node tests/runTest.js"
+    "test": "node tests/mocktests.js",
+    "integration" : "node tests/runTest.js"
   },
   "repository": {
     "type": "git",
