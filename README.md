@@ -46,6 +46,8 @@ Unit tests stub out the behaviour of the OS files and libraries we depend on to 
 
 ### Integration tests
 
+> NOTE: Currently the integration tests only run on Node 0.10 due to native modules for execSync
+
 The integration tests sanity checks the assumptions we make about the format of the OS files and libraries we depend on against real world OS configurations. These tests currently offer only visual confirmation of the output.
 
 The tests are powered by docker, and must be run from the top level directory of the project. You can run them via
