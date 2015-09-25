@@ -25,7 +25,7 @@
   "devDependencies": {
     "cli-color": "^0.3.2",
     "execSync": "^1.0.2",
-    "sleep": "^1.1.8",
+    "sleep": "^3.0.0",
     "tape": "^4.0.0"
   },
   "dependencies": {
