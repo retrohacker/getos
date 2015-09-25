@@ -47,9 +47,7 @@ Unit tests stub out the behaviour of the OS files and libraries we depend on to 
 ### Integration tests
 
 > NOTE: Currently the integration tests only run on Node 0.10 due to native modules for execSync
-
-> 2nd NOTE: Due to failing builds on modern versions of Node, we have removed sleep from the list of dev dependencies.
-> This change prevents the integration tests from running. if you wish to run the integration tests, first run `npm install sleep`
+> 2 NOTE: The unit tests depend on the Linux utility `sleep`.
 
 The integration tests sanity checks the assumptions we make about the format of the OS files and libraries we depend on against real world OS configurations. These tests currently offer only visual confirmation of the output.
 

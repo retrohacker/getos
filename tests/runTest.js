@@ -2,7 +2,6 @@ var color = require('cli-color')
 var execSync = require('child_process').execSync || require('execSync').exec
 var fs = require('fs')
 var path = require('path')
-var sleep = require('sleep').sleep
 
 /**
  * So most of this stuff will be sync, because we are moving
@@ -52,9 +51,8 @@ distros.forEach(function(v1) {
         failed.push(nodeResult)
         process.stdout.write("["+color.red("FAILED!")+"]\n")
       } else {
-        sleep(2)
         try {
-          var dockerLog = execSync("docker logs "+(nodeResult.stdout || nodeResult.toString()),{stdio:[]})
+          var dockerLog = execSync("sleep 2s && docker logs "+(nodeResult.stdout || nodeResult.toString()),{stdio:[]})
         } catch (e) {
           dockerLog = dockerLog || {}
           dockerLog.code = e
