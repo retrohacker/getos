@@ -1,5 +1,5 @@
 var color = require('cli-color')
-var execSync = require('execSync').exec
+var execSync = require('child_process').execSync || require('execSync').exec
 var fs = require('fs')
 var path = require('path')
 var sleep = require('sleep').sleep
