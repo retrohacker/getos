@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wblankenship/getos.svg?branch=integration-tests)](https://img.shields.io/travis/wblankenship/getos.svg) ![](https://img.shields.io/github/issues/wblankenship/getos.svg) ![](https://img.shields.io/github/stars/wblankenship/getos.svg) ![](https://img.shields.io/npm/dm/getos.svg) ![](https://img.shields.io/npm/dt/getos.svg) ![](https://img.shields.io/npm/v/getos.svg) ![](https://img.shields.io/npm/l/express.svg)  ![](https://img.shields.io/twitter/url/https/github.com/wblankenship/getos.svg?style=social)
 
-[![NPM](https://nodei.co/npm/getos.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/getos/)
+[![NPM](https://nodei.co/npm/getos.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/getos/)[![NPM](https://nodei.co/npm-dl/getos.png?months=9&height=3)](https://nodei.co/npm/getos/)
 
 
 Get the OS/Distribution name of the environment you are working on
