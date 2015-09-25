@@ -6,3 +6,4 @@ node_js:
     - "iojs-1.04"
     - "iojs"
     - "node"
+sudo: false
