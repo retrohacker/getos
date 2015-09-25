@@ -29,28 +29,43 @@ distros.forEach(function(v1) {
     //Build the docker image using the dockerfile
     process.stdout.write("Building version "+v2+" of "+capitalize(v1)+"... ")
     var cmd = "docker build -t \"getos:"+v1+v2+"\" ."
-    var dockerResult = execSync("docker build -t \"getos:"+v1+v2+"\" .")
-    if(dockerResult.code!==0) {
+    try {
+      var dockerResult = execSync("docker build -t \"getos:"+v1+v2+"\" .",{stdio:[]})
+    } catch (e) {
+      dockerResult = dockerResult || {}
+      dockerResult.code = e
+    }
+    if(dockerResult.code&&dockerResult.code!==0) {
       failed.push(dockerResult)
       process.stdout.write("["+color.red("FAILED!")+"]\n")
     } else {
       process.stdout.write("["+color.green("OK!")+"]\n")
       process.stdout.write("Running container... ")
       //Show output from distribution
-      var nodeResult = execSync("docker run -d getos:"+v1+v2)
-      if(nodeResult.code!==0) {
+      try {
+        var nodeResult = execSync("docker run -d getos:"+v1+v2,{stdio:[]})
+      } catch (e) {
+        nodeResult = nodeResult || {}
+        nodeResult.code = e
+      }
+      if(nodeResult.code && nodeResult.code!==0) {
         failed.push(nodeResult)
         process.stdout.write("["+color.red("FAILED!")+"]\n")
       } else {
         sleep(2)
-        var dockerLog = execSync("docker logs "+nodeResult.stdout)
-        if(dockerLog.code!==0) {
+        try {
+          var dockerLog = execSync("docker logs "+(nodeResult.stdout || nodeResult.toString()),{stdio:[]})
+        } catch (e) {
+          dockerLog = dockerLog || {}
+          dockerLog.code = e
+        }
+        if(dockerLog.code && dockerLog.code!==0) {
           failed.push(dockerLog)
           process.stdout.write("["+color.red("FAILED!")+"]\n")
         } else {
           process.stdout.write("["+color.green("OK!")+"]\n")
           process.stdout.write("Output from version "+v2+" of "+capitalize(v1)+": \n")
-          process.stdout.write(dockerLog.stdout)
+          process.stdout.write(dockerLog.stdout||dockerLog.toString())
         }
       }
     }
