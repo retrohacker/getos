@@ -4,7 +4,8 @@
   "description": "Get the OS/Distribution name of the environment you are working on",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/mocktests.js && node tests/runTest.js"
+    "test": "node tests/mocktests.js",
+    "integration": "node tests/runTest.js"
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,12 @@
   },
   "homepage": "https://github.com/wblankenship/getos",
   "devDependencies": {
-    "cli-color": "^0.3.2",
-    "execSync": "^1.0.2",
-    "sleep": "^1.1.8",
-    "tape": "^4.0.0"
+    "cli-color": "1.0.0",
+    "execSync": "1.0.2",
+    "tape": "4.2.0"
   },
   "dependencies": {
-    "async": "^0.9.0"
+    "async": "1.4.2"
   },
   "contributors": [
     {
