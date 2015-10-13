@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/wblankenship/getos",
   "devDependencies": {
-    "cli-color": "1.0.0",
+    "cli-color": "1.1.0",
     "execSync": "1.0.2",
     "tape": "4.2.1"
   },
