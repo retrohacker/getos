@@ -1,4 +1,5 @@
 {
+  "/etc/fedora-release" : ["Fedora"],
   "/etc/redhat-release" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF","Centos"],
   "/etc/redhat_version" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF"],
   "/etc/lsb-release" : ["Ubuntu Linux","Chakra","IYCC","Linux Mint","elementary OS"],
@@ -11,7 +12,6 @@
   "/etc/blackcat-release" : ["BlackCat"],
   "/etc/cobalt-release" : ["Cobalt"],
   "/etc/conectiva-release" : ["Conectiva"],
-  "/etc/fedora-release" : ["Fedora"],
   "/etc/eos-version" : ["FreeEOS"],
   "/etc/gentoo-release" : ["Gentoo Linux"],
   "/etc/hlfs-release" : ["HLFS"],
