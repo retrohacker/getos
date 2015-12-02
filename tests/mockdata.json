@@ -18,5 +18,7 @@
 , { "desc": "RHEL 6.6", "platform": "linux", "file": { "/etc/redhat-release": "Red Hat Enterprise Linux Server release 6.6 (Santiago)\n" }, "expected": { "codename": "santiago", "dist": "Red Hat Linux", "os": "linux", "release": "6.6" } }
 , { "desc": "RHEL 7.0", "platform": "linux", "file": { "/etc/redhat-release": "Red Hat Enterprise Linux Server release 7.0 (Maipo)\n" },    "expected": { "codename": "maipo", "dist": "Red Hat Linux", "os": "linux", "release": "7.0" }    }
 
+, { "desc": "SUSE Linux", "platform": "linux", "file": { "/etc/SuSE-release": "SUSE Linux Enterprise Server 11 (x86_64)\nVERSION = 11\nPATCHLEVEL = 4\n" },    "expected": { "dist": "SUSE Linux", "os": "linux", "release": "11" }    }
+
 ]
 
