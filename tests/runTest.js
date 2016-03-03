@@ -15,7 +15,7 @@ var failed = []
 process.stdout.write("["+color.green("OK!")+"]\n")
 distros.forEach(function(v1) {
   if(!fs.statSync(path.join(cwd,v1)).isDirectory()) return;
-  process.stdout.write("Fetcing versions of "+capitalize(v1)+"... ")
+  process.stdout.write("Fetching versions of "+capitalize(v1)+"... ")
   var versions = fs.readdirSync(path.join(cwd,v1))
   process.stdout.write("["+color.green("OK!")+"]\n")
   versions.forEach(function(v2) {
