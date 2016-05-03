@@ -21,5 +21,6 @@
 , { "desc": "SUSE Linux", "platform": "linux", "file": { "/etc/SuSE-release": "SUSE Linux Enterprise Server 11 (x86_64)\nVERSION = 11\nPATCHLEVEL = 4\n" },    "expected": { "dist": "SUSE Linux", "os": "linux", "release": "11" }    }
 
 , { "desc": "Alpine Linux", "platform": "linux", "file": { "/etc/alpine-release": "3.3\n" },    "expected": { "dist": "Alpine Linux", "os": "linux", "release": "3.3" }    }
+, { "desc": "Amazon Linux", "platform": "linux", "file": { "/etc/system-release": "Amazon Linux AMI release 2016.03"}, "expected": {"dist": "Amazon Linux", "os": "linux", "release": "2016.03"}}
 
 ]
