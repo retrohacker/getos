@@ -47,5 +47,6 @@
   "/etc/UnitedLinux-release" : ["UnitedLinux"],
   "/etc/va-release" : ["VA-Linux/RH-VALE"],
   "/etc/yellowdog-release" : ["Yellow Dog"],
-  "/etc/alpine-release": ["Alpine Linux"]
+  "/etc/alpine-release": ["Alpine Linux"],
+  "/etc/system-release": ["Amazon Linux"]
 }
