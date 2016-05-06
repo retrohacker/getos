@@ -48,3 +48,18 @@ We have two forms of tests, unit tests and integration tests.
 ### Unit Tests
 
 Unit tests stub out the behaviour of the OS files and libraries we depend on to ensure the behaviour of the application is sound. You can run these simply by running `npm test`
+
+## Authors and Contributors
+
+getos has been made possible by these fantastic contributors:
+
+<table><tbody>
+<tr><th align="left">Benjamin E. Coe</th><td><a href="https://github.com/bcoe">GitHub/bcoe</a></td><td><a href="http://twitter.com/benjamincoe">Twitter/@benjamincoe</a></td></tr>
+<tr><th align="left">Eugene Sharygin</th><td><a href="https://github.com/eush77">GitHub/eush77</a></td><td><a href="http://twitter.com/eush77">Twitter/@eush77</a></td></tr>
+<tr><th align="left">David Routhieau</th><td><a href="https://github.com/root-io">GitHub/root-io</a></td><td>unknown</td></tr>
+<tr><th align="left">Lawrence</th><td><a href="https://github.com/mindmelting">GitHub/mindmelting</a></td><td><a href="http://twitter.com/mindmelting">Twitter/@mindmelting</a></td></tr>
+<tr><th align="left">Roman Jurkov</th><td><a href="https://github.com/winfinit">GitHub/winfinit</a></td><td><a href="http://twitter.com/winfinit">Twitter/@winfinit</a></td></tr>
+<tr><th align="left">Rod Vagg</th><td><a href="https://github.com/rvagg">GitHub/rvagg</a></td><td><a href="http://twitter.com/rvagg">Twitter/@rvagg</a></td></tr>
+<tr><th align="left">Zeke Sikelianos</th><td><a href="https://github.com/zeke">GitHub/zeke</a></td><td><a href="http://twitter.com/zeke">Twitter/@zeke</a></td></tr>
+<tr><th align="left">Alexander</th><td><a href="https://github.com/alex4Zero">GitHub/alex4Zero</a></td><td><a href="http://twitter.com/alex4Zero">Twitter/@alex4Zero</a></td></tr>
+</tbody></table>
