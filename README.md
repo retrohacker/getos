@@ -41,11 +41,7 @@ If you have a distrubtion *not* in `os.json`, please identify your resource file
 
 Thanks for helping make this tool great.
 
-## Tests
-
-We have two forms of tests, unit tests and integration tests.
-
-### Unit Tests
+## Unit Tests
 
 Unit tests stub out the behaviour of the OS files and libraries we depend on to ensure the behaviour of the application is sound. You can run these simply by running `npm test`
 
