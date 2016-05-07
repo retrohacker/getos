@@ -1,6 +1,6 @@
 {
   "name": "getos",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "Get the OS/Distribution name of the environment you are working on",
   "main": "index.js",
   "scripts": {
