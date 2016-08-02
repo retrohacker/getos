@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wblankenship/getos.git"
+    "url": "https://github.com/retrohacker/getos.git"
   },
   "keywords": [
     "OS",
@@ -19,9 +19,9 @@
   "author": "william.jblankenship@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wblankenship/getos/issues"
+    "url": "https://github.com/retrohacker/getos/issues"
   },
-  "homepage": "https://github.com/wblankenship/getos",
+  "homepage": "https://github.com/retrohacker/getos",
   "devDependencies": {
     "cli-color": "1.1.0",
     "execSync": "1.0.2",
