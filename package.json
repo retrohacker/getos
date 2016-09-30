@@ -25,7 +25,7 @@
   "devDependencies": {
     "cli-color": "1.1.0",
     "execSync": "1.0.2",
-    "tape": "4.6.0"
+    "tape": "4.6.1"
   },
   "dependencies": {
     "async": "2.0.1"
