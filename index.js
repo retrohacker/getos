@@ -83,7 +83,7 @@ function getLinuxDistro(cb) {
          * to simply search for "arch". Also note, we force lower case to
          * match file.toLowerCase() above.
          */
-        check = candidate.split(" ")[0].toLowerCase()
+        var check = candidate.split(" ")[0].toLowerCase()
         if(file.indexOf(check)>=0) {
           os.dist = candidate
           return customLogic(os,file,function(e, augmentedOs) {
