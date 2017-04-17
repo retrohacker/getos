@@ -30,9 +30,21 @@ The `os` object conforms to:
 
 ```js
 {
+  os: [OS NAME],
   dist:[DIST NAME],
   codename:[CODENAME],
   release:[VERSION]
+}
+```
+
+For example:
+
+```js
+{
+  os: "linux",
+  dist: "Ubuntu Linux",
+  codename: "precise",
+  release: "12.04"
 }
 ```
 
