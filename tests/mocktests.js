@@ -41,7 +41,7 @@ mockdata.forEach(function (data) {
 
     getos(function (err, os) {
       t.error(err, 'no error')
-      t.deepEqual(data.expected, os, 'correct os data')
+      t.deepEqual(os, data.expected, 'correct os data')
       t.end()
     })
   })

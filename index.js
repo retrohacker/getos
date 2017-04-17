@@ -59,7 +59,7 @@ function getLinuxDistro(cb) {
        * running on.
        */
       if(candidates.length===1) {
-        return customLogic(os,file,function(e,os) {
+        return customLogic(os,getName(os.dist),file,function(e,os) {
           if(e) return cb(e)
           cachedDistro = os
           return cb(null,os)
@@ -78,15 +78,10 @@ function getLinuxDistro(cb) {
        * distribution name stored in their release file.
        */
       async.each(candidates, function(candidate, done) {
-        /**
-         * We only care about the first word. I.E. for Arch Linux it is safe
-         * to simply search for "arch". Also note, we force lower case to
-         * match file.toLowerCase() above.
-         */
-        var check = candidate.split(" ")[0].toLowerCase()
-        if(file.indexOf(check)>=0) {
+        var name = getName(candidate);
+        if(file.indexOf(name)>=0) {
           os.dist = candidate
-          return customLogic(os,file,function(e, augmentedOs) {
+          return customLogic(os,name,file,function(e, augmentedOs) {
             if(e) return done(e)
             os = augmentedOs;
             return done();
@@ -104,11 +99,29 @@ function getLinuxDistro(cb) {
   })() // sneaky sneaky.
 }
 
+function getName(candidate) {
+  /**
+   * We only care about the first word. I.E. for Arch Linux it is safe
+   * to simply search for "arch". Also note, we force lower case to
+   * match file.toLowerCase() above.
+   */
+  var index = 0
+  var name = 'linux'
+  /**
+   * Don't include 'linux' when searching since it is too aggressive when
+   * matching (see #54)
+   */
+  while(name === 'linux') {
+    name = candidate.split(" ")[index++].toLowerCase()
+  }
+  return name;
+}
+
 /**
  * Loads a custom logic module to populate additional distribution information
  */
-function customLogic(os,file,cb) {
-  try{require("./logic/"+os.dist.split(" ")[0].toLowerCase()+".js")(os,file,cb)}
+function customLogic(os,name,file,cb) {
+  try{require("./logic/"+name+".js")(os,file,cb)}
   catch(e) {cb(null,os)}
 }
 
