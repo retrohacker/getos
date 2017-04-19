@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node tests/mocktests.js",
-    "integration": "node tests/runTest.js"
+    "posttest": "standard",
+    "integration": "node tests/runTest.js",
+    "standard-fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "cli-color": "1.2.0",
     "execSync": "1.0.2",
+    "standard": "^10.0.2",
     "tape": "4.6.3"
   },
   "dependencies": {
