@@ -1,5 +1,7 @@
 # getos
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/retrohacker/getos.svg)](https://greenkeeper.io/)
+
 ![getos](./imgs/logo.png)
 
 [![Build Status](https://travis-ci.org/retrohacker/getos.png?branch=master)](https://travis-ci.org/retrohacker/getos) ![](https://img.shields.io/github/issues/retrohacker/getos.svg) ![](https://img.shields.io/npm/dm/getos.svg) ![](https://img.shields.io/npm/v/getos.svg) ![](https://img.shields.io/npm/l/getos.svg)  ![](https://img.shields.io/twitter/url/https/github.com/retrohacker/getos.svg?style=social)
