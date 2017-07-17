@@ -23,7 +23,8 @@ Object.keys(symlinks).forEach(function (key) {
     })
     return
   }
-  fs.symlink(path.join('../', symlinks[key]), path.join(__dirname, key), function (err) {
+  const relativePath = path.relative(path.dirname(key), path.join(__dirname, symlinks[key]))
+  fs.symlink(relativePath, path.join(__dirname, key), function (err) {
     if (err && err.code !== 'EEXIST') {
       console.error(err)
     }
