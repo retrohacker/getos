@@ -32,7 +32,7 @@
     "tape": "4.6.3"
   },
   "dependencies": {
-    "async": "2.3.0"
+    "async": "2.4.0"
   },
   "contributors": [
     {
