@@ -24,4 +24,5 @@
 , { "desc": "Amazon Linux", "platform": "linux", "file": { "/etc/system-release": "Amazon Linux AMI release 2016.03"}, "expected": {"dist": "Amazon Linux", "os": "linux", "release": "2016.03"}}
 , { "desc": "Arch Linux", "platform": "linux", "file": { "/etc/lsb-release": "LSB_VERSION=1.4\nDISTRIB_ID=Arch\nDISTRIB_RELEASE=rolling\nDISTRIB_DESCRIPTION=\"Arch Linux\""}, "expected": {"dist": "Arch Linux", "os": "linux", "release": "rolling"}}
 , { "desc": "Linux Mint", "platform": "linux", "file": { "/etc/lsb-release": "DISTRIB_ID=LinuxMint\nDISTRIB_RELEASE=18\nDISTRIB_CODENAME=sarah\nDISTRIB_DESCRIPTION=\"Linux Mint 18 Sarah\""}, "expected": {"dist": "Linux Mint", "os": "linux", "codename": "sarah", "release": "18"}}
+, { "desc": "Raspbian", "platform": "linux", "file": { "/etc/rpi-issue": "Raspberry Pi reference 2017-07-05\nGenerated using pi-gen, https://github.com/RPi-Distro/pi-gen, dd7de2554c08e6db89806eb45d955356d0456c66, stage2"}, "expected": {"dist": "Raspbian", "os": "linux", "codename": "n/a", "release": "rolling"}}
 ]
