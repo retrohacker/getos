@@ -1,0 +1,5 @@
+{
+  "logic/arch.js": "logic/ubuntu.js",
+  "logic/mint.js": "logic/ubuntu.js",
+  "logic/raspbian.js": "logic/debian.js"
+}
