@@ -5,6 +5,7 @@ var async = require('async')
 var distros = require('./os.json')
 var fs = require('fs')
 var os = require('os')
+var path = require('path')
 
 /**
  * Begin definition of globals.
@@ -120,7 +121,7 @@ function getName (candidate) {
  * Loads a custom logic module to populate additional distribution information
  */
 function customLogic (os, name, file, cb) {
-  try { require('./logic/' + name + '.js')(os, file, cb) } catch (e) { cb(null, os) }
+  try { require(__dirname + '/logic/' + name + '.js')(os, file, cb) } catch (e) { cb(null, os) }
 }
 
 /**
