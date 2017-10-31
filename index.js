@@ -121,7 +121,8 @@ function getName (candidate) {
  * Loads a custom logic module to populate additional distribution information
  */
 function customLogic (os, name, file, cb) {
-  try { require(__dirname + '/logic/' + name + '.js')(os, file, cb) } catch (e) { cb(null, os) }
+  var logic = path.join(__dirname, 'logic/' + name + '.js')
+  try { require(logic)(os, file, cb) } catch (e) { cb(null, os) }
 }
 
 /**
