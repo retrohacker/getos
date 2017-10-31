@@ -4,6 +4,7 @@
   "/etc/redhat_version" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF"],
   "/etc/SuSE-release": ["SUSE Linux"],
   "/etc/lsb-release" : ["Ubuntu Linux","Chakra","IYCC","Linux Mint","elementary OS","Arch Linux"],
+  "/etc/rpi-issue" : ["Raspbian"],
   "/etc/debian_version" : ["Debian"],
   "/etc/debian_release" : ["Debian"],
   "/etc/annvix-release" : ["Annvix"],
