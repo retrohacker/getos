@@ -19,9 +19,10 @@
 , { "desc": "RHEL 7.0", "platform": "linux", "file": { "/etc/redhat-release": "Red Hat Enterprise Linux Server release 7.0 (Maipo)\n" },    "expected": { "codename": "maipo", "dist": "Red Hat Linux", "os": "linux", "release": "7.0" }    }
 
 , { "desc": "SUSE Linux", "platform": "linux", "file": { "/etc/SuSE-release": "SUSE Linux Enterprise Server 11 (x86_64)\nVERSION = 11\nPATCHLEVEL = 4\n" },    "expected": { "dist": "SUSE Linux", "os": "linux", "release": "11" }    }
-
 , { "desc": "Alpine Linux", "platform": "linux", "file": { "/etc/alpine-release": "3.3\n" },    "expected": { "dist": "Alpine Linux", "os": "linux", "release": "3.3" }    }
 , { "desc": "Amazon Linux", "platform": "linux", "file": { "/etc/system-release": "Amazon Linux AMI release 2016.03"}, "expected": {"dist": "Amazon Linux", "os": "linux", "release": "2016.03"}}
 , { "desc": "Arch Linux", "platform": "linux", "file": { "/etc/lsb-release": "LSB_VERSION=1.4\nDISTRIB_ID=Arch\nDISTRIB_RELEASE=rolling\nDISTRIB_DESCRIPTION=\"Arch Linux\""}, "expected": {"dist": "Arch Linux", "os": "linux", "release": "rolling"}}
 , { "desc": "Linux Mint", "platform": "linux", "file": { "/etc/lsb-release": "DISTRIB_ID=LinuxMint\nDISTRIB_RELEASE=18\nDISTRIB_CODENAME=sarah\nDISTRIB_DESCRIPTION=\"Linux Mint 18 Sarah\""}, "expected": {"dist": "Linux Mint", "os": "linux", "codename": "sarah", "release": "18"}}
+
+, { "desc": "Raspbian 8", "platform": "linux", "file": { "/etc/os-release": "PRETTY_NAME=\"Raspbian GNU/Linux 8 (jessie)\"\nNAME=\"Raspbian GNU/Linux\"\nVERSION_ID=\"8\"\nVERSION=\"8 (jessie)\"\nID=raspbian\nHOME_URL=\"http://www.raspbian.org/\"\nSUPPORT_URL=\"http://www.raspbian.org/RaspbianForums\"\nBUG_REPORT_URL=\"http://www.raspbian.org/RaspbianBugs\"" },        "expected": { "codename": "jessie", "dist": "Raspbian", "os": "linux", "release": "8" }  }
 ]
