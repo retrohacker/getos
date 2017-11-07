@@ -31,7 +31,7 @@
     "tape": "4.8.0"
   },
   "dependencies": {
-    "async": "2.4.0"
+    "async": "2.6.0"
   },
   "contributors": [
     {
