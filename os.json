@@ -6,7 +6,6 @@
   "/etc/lsb-release" : ["Ubuntu Linux","Chakra","IYCC","Linux Mint","elementary OS","Arch Linux"],
   "/etc/debian_version" : ["Debian"],
   "/etc/debian_release" : ["Debian"],
-  "/etc/os-release": ["Raspbian"],
   "/etc/annvix-release" : ["Annvix"],
   "/etc/arch-release" : ["Arch Linux"],
   "/etc/arklinux-release" : ["Arklinux"],
@@ -49,5 +48,6 @@
   "/etc/va-release" : ["VA-Linux/RH-VALE"],
   "/etc/yellowdog-release" : ["Yellow Dog"],
   "/etc/alpine-release": ["Alpine Linux"],
-  "/etc/system-release": ["Amazon Linux"]
+  "/etc/system-release": ["Amazon Linux"],
+  "/etc/os-release": ["Raspbian"]
 }
