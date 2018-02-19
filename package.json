@@ -28,7 +28,7 @@
     "cli-color": "1.2.0",
     "execSync": "1.0.2",
     "standard": "^10.0.2",
-    "tape": "4.8.0"
+    "tape": "4.9.0"
   },
   "dependencies": {
     "async": "2.4.0"
