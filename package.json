@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/retrohacker/getos",
   "devDependencies": {
-    "cli-color": "1.2.0",
+    "cli-color": "1.3.0",
     "execSync": "1.0.2",
     "standard": "^10.0.2",
     "tape": "4.8.0"
