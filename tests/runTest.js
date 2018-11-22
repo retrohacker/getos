@@ -27,7 +27,7 @@ distros.forEach(function (v1) {
     // Build the docker image using the dockerfile
     process.stdout.write('Building version ' + v2 + ' of ' + capitalize(v1) + '... ')
     try {
-      var dockerResult = execSync('docker build -t "getos:' + v1 + v2 + '" .', {stdio: []})
+      var dockerResult = execSync('docker build -t "getos:' + v1 + v2 + '" .', { stdio: [] })
     } catch (e) {
       dockerResult = dockerResult || {}
       dockerResult.code = e
@@ -40,7 +40,7 @@ distros.forEach(function (v1) {
       process.stdout.write('Running container... ')
       // Show output from distribution
       try {
-        var nodeResult = execSync('docker run -d getos:' + v1 + v2, {stdio: []})
+        var nodeResult = execSync('docker run -d getos:' + v1 + v2, { stdio: [] })
       } catch (e) {
         nodeResult = nodeResult || {}
         nodeResult.code = e
@@ -50,7 +50,7 @@ distros.forEach(function (v1) {
         process.stdout.write('[' + color.red('FAILED!') + ']\n')
       } else {
         try {
-          var dockerLog = execSync('sleep 2s && docker logs ' + (nodeResult.stdout || nodeResult.toString()), {stdio: []})
+          var dockerLog = execSync('sleep 2s && docker logs ' + (nodeResult.stdout || nodeResult.toString()), { stdio: [] })
         } catch (e) {
           dockerLog = dockerLog || {}
           dockerLog.code = e

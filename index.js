@@ -21,7 +21,7 @@ module.exports = function getOs (cb) {
   // Linux is a special case.
   if (osName === 'linux') return getLinuxDistro(cb)
   // Else, node's builtin is acceptable.
-  return cb(null, {'os': osName})
+  return cb(null, { 'os': osName })
 }
 
 /**
