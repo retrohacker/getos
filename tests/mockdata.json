@@ -25,4 +25,6 @@
 , { "desc": "Linux Mint", "platform": "linux", "file": { "/etc/lsb-release": "DISTRIB_ID=LinuxMint\nDISTRIB_RELEASE=18\nDISTRIB_CODENAME=sarah\nDISTRIB_DESCRIPTION=\"Linux Mint 18 Sarah\""}, "expected": {"dist": "Linux Mint", "os": "linux", "codename": "sarah", "release": "18"}}
 
 , { "desc": "Raspbian 8", "platform": "linux", "file": { "/etc/os-release": "PRETTY_NAME=\"Raspbian GNU/Linux 8 (jessie)\"\nNAME=\"Raspbian GNU/Linux\"\nVERSION_ID=\"8\"\nVERSION=\"8 (jessie)\"\nID=raspbian\nHOME_URL=\"http://www.raspbian.org/\"\nSUPPORT_URL=\"http://www.raspbian.org/RaspbianForums\"\nBUG_REPORT_URL=\"http://www.raspbian.org/RaspbianBugs\"" },        "expected": { "codename": "jessie", "dist": "Raspbian", "os": "linux", "release": "8" }  }
+
+, { "desc": "Manjaro Linux", "platform": "linux", "file": { "/etc/lsb-release": "DISTRIB_ID=ManjaroLinux\nDISTRIB_RELEASE=17.1.10\nDISTRIB_CODENAME=Hakoila\nDISTRIB_DESCRIPTION=\"Manjaro Linux\"" }, "expected": { "codename": "hakoila", "dist": "Manjaro Linux", "os": "linux", "release": "17.1.10" } }
 ]
