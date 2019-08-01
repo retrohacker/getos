@@ -7,7 +7,6 @@
   "/etc/debian_version" : ["Debian"],
   "/etc/debian_release" : ["Debian"],
   "/etc/arch-release" : ["Arch Linux"],
-  "/etc/os-release": ["Raspbian"],
   "/etc/NIXOS": ["NixOS"],
   "/etc/annvix-release" : ["Annvix"],
   "/etc/arklinux-release" : ["Arklinux"],
@@ -50,5 +49,6 @@
   "/etc/va-release" : ["VA-Linux/RH-VALE"],
   "/etc/yellowdog-release" : ["Yellow Dog"],
   "/etc/alpine-release": ["Alpine Linux"],
-  "/etc/system-release": ["Amazon Linux"]
+  "/etc/system-release": ["Amazon Linux"],
+  "/etc/os-release": ["Raspbian"]
 }
