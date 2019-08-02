@@ -16,7 +16,8 @@
   "keywords": [
     "OS",
     "Distribution",
-    "Platform"
+    "Platform",
+    "Version"
   ],
   "author": "william.jblankenship@gmail.com",
   "license": "MIT",
