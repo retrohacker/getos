@@ -25,13 +25,13 @@
   },
   "homepage": "https://github.com/retrohacker/getos",
   "devDependencies": {
-    "cli-color": "1.4.0",
-    "execSync": "1.0.2",
-    "standard": "^12.0.1",
-    "tape": "4.9.1"
+    "cli-color": "^1.4.0",
+    "execSync": "^1.0.2",
+    "standard": "^13.1.0",
+    "tape": "^4.11.0"
   },
   "dependencies": {
-    "async": "2.6.1"
+    "async": "^3.1.0"
   },
   "contributors": [
     {
