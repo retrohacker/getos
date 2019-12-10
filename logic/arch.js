@@ -1,1 +1,1 @@
-ubuntu.js
+module.exports = require("./ubuntu");
