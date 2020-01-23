@@ -1,1 +1,1 @@
-module.exports = require("./ubuntu");
+module.exports = require('./ubuntu')
