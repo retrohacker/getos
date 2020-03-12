@@ -3,7 +3,7 @@
   "/etc/redhat-release" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF","Centos"],
   "/etc/redhat_version" : ["RHEL","RHAS","Red Hat Linux","Scientific Linux","ScientificSL","ScientificCERNSLC","ScientificFermiLTS","ScientificSLF"],
   "/etc/SuSE-release": ["SUSE Linux"],
-  "/etc/lsb-release" : ["Ubuntu Linux","Chakra","IYCC","Linux Mint","elementary OS","Arch Linux","Manjaro Linux", "KDE neon"],
+  "/etc/lsb-release" : ["Ubuntu Linux","Chakra","IYCC","Linux Mint","elementary OS","Arch Linux","Manjaro Linux", "KDE neon", "Zorin"],
   "/etc/debian_version" : ["Debian"],
   "/etc/debian_release" : ["Debian"],
   "/etc/arch-release" : ["Arch Linux"],
