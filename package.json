@@ -29,7 +29,7 @@
     "cli-color": "^2.0.0",
     "execSync": "^1.0.2",
     "standard": "^14.3.1",
-    "tape": "^4.13.2"
+    "tape": "^5.0.0"
   },
   "dependencies": {
     "async": "^3.2.0"
