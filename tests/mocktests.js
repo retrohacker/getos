@@ -1,6 +1,7 @@
 var test = require('tape')
 var fs = require('fs')
 var os = require('os')
+var cp = require('child_process')
 var mockdata = require('./mockdata')
 
 var currentData
@@ -20,6 +21,13 @@ fs.readFile = function (file, enc, callback) {
   process.nextTick(function () {
     if (!currentData.file[file]) { return callback(new Error()) }
     callback(null, currentData.file[file])
+  })
+}
+
+cp.exec = function (command, callback) {
+  process.nextTick(function () {
+    if (!currentData.exec[command]) { return callback(new Error()) }
+    callback(null, currentData.exec[command])
   })
 }
 

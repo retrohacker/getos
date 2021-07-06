@@ -1,5 +1,5 @@
 [
-  { "desc": "OS X", "platform": "darwin", "expected": { "os": "darwin" } }
+  { "desc": "OS X", "platform": "darwin", "exec": { "sw_vers": "ProductName:\tmacOS\nProductVersion:\t11.4\nBuildVersion:\t20F71\n"}, "expected": { "os": "darwin", "release": "11.4", "name": "macOS" } }
 , { "desc": "Windows", "platform": "win32", "expected": { "os": "win32"  } }
 , { "desc": "Ubuntu 14.10", "platform": "linux", "file": { "/etc/lsb-release": "DISTRIB_ID=Ubuntu\nDISTRIB_RELEASE=14.10\nDISTRIB_CODENAME=utopic\nDISTRIB_DESCRIPTION=\"Ubuntu 14.10\"\n" },        "expected": { "codename": "utopic", "dist": "Ubuntu", "os": "linux", "release": "14.10" }  }
 , { "desc": "Ubuntu 14.04", "platform": "linux", "file": { "/etc/lsb-release": "DISTRIB_ID=Ubuntu\nDISTRIB_RELEASE=14.04\nDISTRIB_CODENAME=trusty\nDISTRIB_DESCRIPTION=\"Ubuntu 14.04.2 LTS\"\n" },  "expected": { "codename": "trusty", "dist": "Ubuntu", "os": "linux", "release": "14.04" }  }
