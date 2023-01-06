@@ -19,8 +19,34 @@ module.exports = function getOs (cb) {
   var osName = os.platform()
   // Linux is a special case.
   if (osName === 'linux') return getLinuxDistro(cb)
+  if (osName === 'darwin') return getDarwinVersion(cb)
   // Else, node's builtin is acceptable.
   return cb(null, { os: osName })
+}
+
+function getDarwinVersion (cb) {
+  if (cachedDistro) return cb(null, cachedDistro)
+  var productVersionRegex = /^ProductVersion:\s+(.*)/m
+  var productNameRegex = /^ProductName:\s+(.*)/m
+  var exec = require('child_process').exec
+
+  var distro = { os: 'darwin' }
+
+  exec('sw_vers', function (error, stdout, stderr) {
+    if (error) {
+      return cb(error, { os: os.platform() })
+    }
+    var productVersion = stdout.match(productVersionRegex)
+    if (productVersion && productVersion.length === 2) {
+      distro.release = productVersion[1]
+    }
+    var name = stdout.match(productNameRegex)
+    if (name && name.length === 2) {
+      distro.name = name[1]
+    }
+    cachedDistro = distro
+    return cb(null, distro)
+  })
 }
 
 /**
